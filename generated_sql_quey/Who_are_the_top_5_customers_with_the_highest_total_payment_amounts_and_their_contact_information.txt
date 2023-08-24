@@ -1,0 +1,7 @@
+SELECT c.customerName, c.contactLastName, c.contactFirstName, SUM(p.amount) AS totalPayment
+FROM customers c
+INNER JOIN payments p ON c.customerNumber = p.customerNumber
+GROUP BY c.customerNumber
+ORDER BY totalPayment DESC
+LIMIT 5;
+

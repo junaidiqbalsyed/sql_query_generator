@@ -1,0 +1,11 @@
+SELECT 
+    c.customerNumber,
+    c.customerName,
+    p.paymentDate,
+    p.amount,
+    SUM(p.amount) OVER (PARTITION BY c.customerNumber ORDER BY p.paymentDate) AS runningTotal
+FROM
+    customers c
+    JOIN payments p ON c.customerNumber = p.customerNumber
+ORDER BY
+    c.customerNumber, p.paymentDate;

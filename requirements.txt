@@ -157,12 +157,6 @@ SQLAlchemy==1.4.49
 sqlalchemy-bigquery==1.8.0
 stack-data==0.6.2
 tenacity==8.2.3
-tensorboard==2.13.0
-tensorboard-data-server==0.7.1
-tensorflow==2.13.0
-tensorflow-estimator==2.13.0
-tensorflow-macos==2.13.0
-tensorflow-metal==1.0.1
 termcolor==2.3.0
 terminado==0.17.1
 tinycss2==1.2.1

@@ -1,4 +1,0 @@
-SELECT *
-FROM products
-WHERE quantityInStock > 100;
-

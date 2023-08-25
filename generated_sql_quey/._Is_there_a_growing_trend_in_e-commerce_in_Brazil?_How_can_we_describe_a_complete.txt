@@ -1,0 +1,10 @@
+SELECT 
+  EXTRACT(YEAR FROM o.order_purchase_timestamp) AS year, 
+  COUNT(DISTINCT o.order_id) AS num_orders
+FROM 
+  target.orders o
+GROUP BY 
+  year
+ORDER BY 
+  year;
+

@@ -1,0 +1,6 @@
+SELECT SUM(p.payment_value) AS total_amount_sold
+FROM target.orders o
+JOIN target.payments p ON o.order_id = p.order_id
+WHERE o.order_purchase_timestamp BETWEEN '2017-01-01' AND '2018-08-31'
+AND o.order_status = 'delivered';
+

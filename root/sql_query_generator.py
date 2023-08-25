@@ -22,22 +22,6 @@ FROM employees e
 JOIN offices o ON e.officeCode = o.officeCode
 GROUP BY o.officeCode;
 
-Example 2:
-Task:  What time do Brazilian customers tend to buy (Dawn, Morning, Afternoon or Night)? in BigQuery
-
-query: SELECT CASE
-    WHEN EXTRACT(HOUR FROM order_purchase_timestamp) BETWEEN 0 AND 5 THEN 'Dawn'
-    WHEN EXTRACT(HOUR FROM order_purchase_timestamp) BETWEEN 6 AND 11 THEN 'Morning'
-    WHEN EXTRACT(HOUR FROM order_purchase_timestamp) BETWEEN 12 AND 17 THEN 'Afternoon'
-    ELSE 'Night'
-END AS Time_of_day,
-COUNT(order_id) as Order_Count
-FROM target.orders
-JOIN target.customers
-ON orders.customer_id = customers.customer_id
-WHERE customers.customer_state IN ('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO')
-GROUP BY Time_of_day
-ORDER BY Order_Count DESC;
 
 generate the query in '{sql_language}' language
 

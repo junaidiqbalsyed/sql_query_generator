@@ -1,0 +1,5 @@
+SELECT SUM(payment_value) AS total_amount_sold
+FROM `target.orders` AS o
+JOIN `target.payments` AS p ON o.order_id = p.order_id
+WHERE EXTRACT(YEAR FROM o.order_purchase_timestamp) = 2018
+AND EXTRACT(MONTH FROM o.order_purchase_timestamp) BETWEEN 1 AND 8
